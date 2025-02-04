@@ -1,0 +1,204 @@
+/* Global Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f4f4f9;
+}
+
+h2 {
+    text-align: center;
+    color: #333;
+}
+
+/* Login Styles */
+#login-container {
+    background-color: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    text-align: center;
+}
+
+#login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+input[type="text"], input[type="password"] {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+button {
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+#error-message {
+    margin-top: 10px;
+}
+
+/* User Selection Styles */
+#select-user-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+}
+
+#user-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    width: 100%;
+}
+
+.user-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #4CAF50;
+    color: white;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    font-size: 20px;
+    cursor: pointer;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    text-align: center;
+}
+
+.user-item:hover {
+    background-color: #45a049;
+    transform: scale(1.1);
+}
+
+/* Unread message styling */
+.user-item.unread {
+    background-color: #FF9800;
+    width: 300px; /* Rectangle width */
+    height: 50px; /* Rectangle height */
+    border-radius: 10px;
+    transform: scale(1.1);
+    order: 1; /* Ensure unread messages are at the bottom */
+}
+
+.user-item.unread:hover {
+    transform: scale(1.2);
+}
+
+/* Read message styling */
+.user-item.read {
+    background-color: #4CAF50; /* Default color for read messages */
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    transform: scale(1);
+    order: initial; /* Resets order to default */
+}
+
+#notification-container {
+    margin-bottom: 20px;
+    color: #4CAF50;
+    text-align: center;
+}
+
+/* Chat Styles */
+#chat-container {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    width: 400px;
+    height: 500px;
+}
+
+#chat-box {
+    flex-grow: 1;
+    overflow-y: auto;
+    border: 1px solid #ddd;
+    padding: 10px;
+    background-color: #f9f9f9;
+    margin-bottom: 20px;
+}
+
+.message {
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 8px;
+    font-size: 16px;
+    max-width: 80%;
+    word-wrap: break-word;
+}
+
+/* Sent message (sent by current user) */
+.message.sent {
+    background-color: #2196F3; /* Blue for sent message */
+    color: white;
+    align-self: flex-end;
+    border-radius: 12px;
+}
+
+/* Received message (reply from selected user) */
+.message.received {
+    background-color: transparent; /* No background for replies */
+    color: #333; /* Default color for reply */
+    align-self: flex-start;
+}
+
+/* Chat Input Styles */
+#message-input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: calc(100% - 90px);
+    font-size: 16px;
+    margin-right: 10px;
+}
+
+#back-button {
+    background-color: #2196F3;
+}
+
+#back-button:hover {
+    background-color: #1976D2;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 600px) {
+    #login-container, #select-user-container, #chat-container {
+        width: 100%;
+        padding: 15px;
+    }
+
+    #message-input {
+        width: calc(100% - 80px);
+    }
+}
